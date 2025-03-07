@@ -39,7 +39,7 @@ fi
 
 # Add all files that are not in .gitignore
 echo -e "${YELLOW}Adding files to git...${NC}"
-git add .
+git add auto_shorts/scripts auto_shorts/commands auto_shorts/configs/.env.template auto_shorts/README.md requirements.txt
 
 # Show which files will be committed
 echo -e "${YELLOW}Files to be committed:${NC}"
@@ -60,7 +60,7 @@ git commit -m "$commit_message"
 
 # Push to GitHub
 echo -e "${YELLOW}Pushing to GitHub...${NC}"
-git push -u origin main
+git push
 
 # Check if push was successful
 if [ $? -eq 0 ]; then
@@ -68,5 +68,5 @@ if [ $? -eq 0 ]; then
     echo -e "View your repository at: ${GREEN}https://github.com/G4Q95/AutoShorts-PreWebApp${NC}"
 else
     echo -e "${RED}Error pushing to GitHub. Please check your internet connection and GitHub access.${NC}"
-    echo -e "You can try manually pushing later with: ${YELLOW}git push -u origin main${NC}"
+    echo -e "You can try manually pushing later with: ${YELLOW}git push${NC}"
 fi 
